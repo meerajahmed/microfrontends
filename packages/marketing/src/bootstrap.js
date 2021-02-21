@@ -19,3 +19,4 @@ if( process.env.NODE_ENV === 'development') {
 }
 
 // running app with in container
+export { mount };
