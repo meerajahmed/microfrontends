@@ -1,10 +1,9 @@
 import React from 'react';
-import { mount } from 'marketing/app';
-console.log(mount);
+import MarketingRoot from './src/components/MarketingRoot';
 
 const App = () => {
     return (
-        <p>Hi there!</p>
+        <MarketingRoot />
     );
 };
 
