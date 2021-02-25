@@ -5,6 +5,10 @@ const webpackCommon = require("./webpack.common");
 
 const prodConfig = {
     mode: 'production',
+    output: {
+        filename: '[name].[contenthash.js]',
+        publicPath: '/marketing/latest/'
+    },
     plugins: [
         new ModuleFederationPlugin({
             name: 'marketing',
