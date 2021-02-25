@@ -10,7 +10,7 @@ const prodConfig = {
     output: {
         filename: '[name].[contenthash].js',
         /**
-         * publicPath -> used by html-webpack-plugin to refer to some file built by webpack
+         * publicPath - used by html-webpack-plugin to refer to some file built by webpack
          * ex: main.js in index.html
         */
         publicPath: '/container/latest/'
