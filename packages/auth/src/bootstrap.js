@@ -4,7 +4,11 @@ import { createMemoryHistory, createBrowserHistory } from 'history'
 import App from './App';
 
 const mount = (el, props) => {
-    const { onNavigate = () => {}, defaultHistory, initialPath } = props;
+    const { 
+        onNavigate = () => {}, 
+        defaultHistory, 
+        initialPath 
+    } = props;
 
     const history = defaultHistory || createMemoryHistory({
         initialEntries: [initialPath]
@@ -31,7 +35,7 @@ const mount = (el, props) => {
 
 // running app in isolation
 if( process.env.NODE_ENV === 'development') {
-    const devRoot = document.getElementById('_marketing-root__dev');
+    const devRoot = document.getElementById('_auth-root__dev');
     if(devRoot) {
         mount(devRoot, {
             defaultHistory: createBrowserHistory()
