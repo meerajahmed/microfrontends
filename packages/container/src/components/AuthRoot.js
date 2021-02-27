@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { mount } from 'marketing/bootstrap';
+import { mount } from 'auth/bootstrap';
 import { useHistory } from 'react-router-dom';
 
-const MarketingRoot = () => {
+const AuthRoot = () => {
     const ref = useRef(null);
     const history = useHistory();
     useEffect(() => {
@@ -27,4 +27,4 @@ const MarketingRoot = () => {
     );
 };
 
-export default MarketingRoot;
+export default AuthRoot;

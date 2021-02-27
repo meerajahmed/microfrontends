@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MarketingRoot from './src/components/MarketingRoot';
 import Header from './src/components/Header';
 import { StylesProvider, createGenerateClassName } from '@material-ui/core';
+import AuthRoot from './src/components/AuthRoot';
 
 const generateClassName = createGenerateClassName({
     productionPrefix: '_cont'
@@ -10,12 +11,15 @@ const generateClassName = createGenerateClassName({
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <StylesProvider generateClassName={generateClassName}>
+        <StylesProvider generateClassName={generateClassName}>
+            <BrowserRouter>
                 <Header />
-                <MarketingRoot />
-            </StylesProvider>
-        </BrowserRouter>
+                <Switch>
+                    <Route path="/auth" component={AuthRoot} />
+                    <Route path="/" component={MarketingRoot} />
+                </Switch>
+            </BrowserRouter>
+        </StylesProvider>
     );
 };
 
