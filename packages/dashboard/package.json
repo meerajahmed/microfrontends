@@ -2,7 +2,10 @@
   "name": "dashboard",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --config config/webpack.dev.js",
+    "build": "webpack --config config/webpack.prod.js",
+    "prebuild": "npm run clean",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "chart.js": "^2.9.4",
@@ -21,6 +24,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "node-sass": "^4.14.1",
+    "rimraf": "^3.0.2",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",
     "vue-loader": "^16.0.0-beta.9",
