@@ -6,6 +6,7 @@ import App from './App';
 const mount = (el, props) => {
     const { 
         onNavigate = () => {}, 
+        onSignIn = () => {},
         defaultHistory, 
         initialPath 
     } = props;
@@ -15,7 +16,7 @@ const mount = (el, props) => {
     });
 
     ReactDOM.render(
-        <App history={history} />,
+        <App onSignIn={onSignIn} history={history} />,
         el
     );
 

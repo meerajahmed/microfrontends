@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { mount } from 'auth/bootstrap';
 import { useHistory } from 'react-router-dom';
 
-const AuthRoot = () => {
+const AuthRoot = props => {
+    const { onSignIn } = props;
     const ref = useRef(null);
     const history = useHistory();
     useEffect(() => {
@@ -15,7 +16,8 @@ const AuthRoot = () => {
                     if(currentPathName !== nextPathName) {
                         history.push(nextPathName);
                     }
-                })
+                }),
+                onSignIn,
         });
 
         history.listen(onParentNavigate)
