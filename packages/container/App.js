@@ -6,6 +6,7 @@ import Progress from './src/components/Progress'
 
 const AuthRootLazy = lazy(() => import('./src/components/AuthRoot'));
 const MarketingRootLazy = lazy(() => import('./src/components/MarketingRoot'));
+const DashboardRootLazy = lazy(() => import('./src/components/DashboardRoot'));
 
 const generateClassName = createGenerateClassName({
     productionPrefix: '_cont'
@@ -22,6 +23,7 @@ const App = () => {
                         <Route path="/auth">
                             <AuthRootLazy onSignIn={() => setIsSignedIn(true)}/>
                         </Route>
+                        <Route path="/dashboard" component={DashboardRootLazy} />
                         <Route path="/" component={MarketingRootLazy} />
                     </Switch>
                 </Suspense>
